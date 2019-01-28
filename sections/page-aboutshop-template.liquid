@@ -1,0 +1,209 @@
+<div class="hero-section v3">
+  <img src="{% if section.settings.abus_bg_header == blank %}https://placehold.it/1900x555{% else %}{{section.settings.abus_bg_header|img_url:'master'}}{% endif %}" alt="" class="img-responsive">
+  <div class="box-center">
+    <h1 class="page-title">{{page.title}}</h1>
+    {% include 'breadcrumb' %}
+  </div>
+</div>
+<!--our teams-->
+<div class="container agency-container v3">
+  <div class="about-shop-ver1">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 shop-content">
+        <h3 class="brand-title">{{section.settings.abus_br_title}}</h3>
+        <h2 class="agency-title-noline ver3">{{section.settings.abus_br_content1}}</h2>
+        <p>{{section.settings.abus_br_content2}}</p>
+        <div class="shop-social">
+          {{section.settings.abus_br_social}}
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="cosre-bg text-center">
+          <img src="{% if section.settings.abus_img == blank %}https://placehold.it/646x459{% else %}{{section.settings.abus_img|img_url:'master'}}{% endif %}" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about-shop-ver2">
+    {% if section.blocks.size > 0 %}
+    {% for block in section.blocks %}
+    {% if block.type == 'infoblock' %}
+    <div class="shop-content ver2">
+      <h3 class="shop-title">{{block.settings.info_title}}</h3>
+      {{block.settings.info_content}}
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    <div class="clearfix"></div>
+  </div>
+</div>
+<div class="container container-42">
+  <a href="{{section.settings.abus_si_url1}}">
+    <img src="{% if section.settings.abus_si_img1 == blank %}https://placehold.it/1817x1029{% else %}{{section.settings.abus_si_img1|img_url:'master'}}{% endif %}" alt="" class="img-responsive">
+  </a>
+</div>
+<div class="container agency-container v2">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <a class="hover-images" href="{{section.settings.abus_si_url2}}">
+        <img src="{% if section.settings.abus_si_img2 == blank %}https://placehold.it/648x800{% else %}{{section.settings.abus_si_img2|img_url:'master'}}{% endif %}" alt="about-img" class="img-reponsive">
+      </a>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 agency-clm-right ver2">
+      <a class="hover-images" href="{{section.settings.abus_si_url3}}">
+        <img src="{% if section.settings.abus_si_img3 == blank %}https://placehold.it/798x531{% else %}{{section.settings.abus_si_img3|img_url:'master'}}{% endif %}" alt="about-img" class="img-reponsive">
+      </a>
+    </div>
+  </div>
+</div>
+<!--end our teams-->
+
+{% schema %}
+{
+  "name": "Page About Shop",
+  "settings": [
+	{
+      "type": "header",
+      "content": "Section Header"
+    },
+    {
+      "type": "text",
+      "id": "abus_si_title_1",
+      "label": "Title 1",
+      "default": "A SPECTACULAR EVENT"
+    },
+    {
+      "type": "text",
+      "id": "abus_si_title_2",
+      "label": "Title 2",
+      "default": "DOESN’T COME FROM ONE PERSON"
+    },
+	{
+      "type": "text",
+      "id": "abus_si_title_3",
+      "label": "Title 3",
+      "default": "BUT MANY"
+    },
+    {
+      "type": "header",
+      "content": "Section About"
+    },
+    {
+      "type": "image_picker",
+      "id": "abus_about_image_1",
+      "label": "Image 1"
+    },
+	{
+      "type": "image_picker",
+      "id": "abus_about_image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "abus_about_title",
+      "label": "Title About",
+      "default": "About  Marriage Vows"
+    },
+    {
+      "type": "text",
+      "id": "abus_about_content_title",
+      "label": "Title Content",
+      "default": "The secret Ingredient"
+    },
+    {
+      "type": "image_picker",
+      "id": "abus_about_icon",
+      "label": "Icon Image"
+    },
+	{
+      "type": "text",
+      "id": "abus_about_content_1",
+      "label": "About content 1",
+      "default": "he other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and an trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through a weakness of will, which is the same as saying ath"
+    },
+    {
+      "type": "text",
+      "id": "abus_about_content_2",
+      "label": "About content 2",
+      "default": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, It is a long established fact that a reader will be dis"
+    },
+    {
+      "type": "text",
+      "id": "abus_about_content_3",
+      "label": "About content 3",
+      "default": "“We strive to work closely together with our customers in solving their problems Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”"
+    },
+	{
+      "type": "header",
+      "content": "Section Team"
+    },
+    {
+      "type": "text",
+      "id": "abus_team_title1",
+      "label": "Title Team 1",
+      "default": "Our Family"
+    },
+    {
+      "type": "text",
+      "id": "abus_team_title2",
+      "label": "Title Team 2",
+      "default": "Meet team Marriage Vows"
+    },
+	{
+      "type": "text",
+      "id": "abus_team_desc",
+      "label": "Description",
+      "default": "Meet the team of people who work with marriage to make these extraordinary events possible. With decades of industry experience and a vast wealth of knowledge, they are among the most talented in the world sharing their blood,"
+    },
+    {
+      "type": "header",
+      "content": "Section Brand"
+    },
+    {
+      "type": "text",
+      "id": "abus_br_title",
+      "label": "Title",
+      "default": "Press <br>Publications"
+    },
+    {
+      "type": "url",
+      "id": "abus_brand_url",
+      "label": "URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "infoblock",
+      "name": "Info block",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "info_title",
+          "label": "Title",
+          "default": "Address"
+        },
+        {
+          "type": "textarea",
+          "id": "info_content",
+          "label": "Content",
+          "default": "Creditcard"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page About Shop"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
